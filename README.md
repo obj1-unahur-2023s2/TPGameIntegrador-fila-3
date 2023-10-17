@@ -1,5 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hUnPAC5R)
-# TRON: El legado
+# TRON: Batalla de moto de luz
 
 Equipo de desarrollo
 
@@ -14,8 +14,14 @@ Equipo de desarrollo
 (agregar)
 
 ## Reglas de Juego / Instrucciones
-
-(Escribirlas)
+ 
+- 1 vs 1
+- Haste 3 puntos
+- 2 modalidades (Normal , Dificil)
+  
+- Evitar los obstaculos
+- Evitar la estela de la moto de luz del rival y la propia estela
+- No calentarse con tu rival
 
 
 ## Otros
