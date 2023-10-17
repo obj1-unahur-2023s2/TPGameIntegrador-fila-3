@@ -19,10 +19,22 @@ Equipo de desarrollo
 - Haste 3 puntos
 - 2 modalidades (Normal , Dificil)
   
-- Evitar los obstaculos
-- Evitar la estela de la moto de luz del rival y la propia estela
-- No calentarse con tu rival
+Objetivo:
+El objetivo principal en el modo "Motos de Luz" es sobrevivir y derrotar a tus oponentes al forzarlos a chocar contra las líneas brillantes que dejas detrás de tu motocicleta de luz o contra las paredes del escenario. Ganarás puntos al eliminar a tus oponentes y al sobrevivir en el juego.
 
+Jugabilidad:
+
+1.   Control de la Moto de Luz: Cada jugador controla una motocicleta de luz que se desplaza en una cuadrícula virtual. Las motos de luz avanzan constantemente, y no puedes detenerlas. Tienes control sobre la dirección de la moto y debes elegir cuándo y hacia dónde girar.
+
+2.    Dejar un Rastro de Luz: A medida que tu moto avanza, dejará un rastro de líneas brillantes detrás de ella. Estas líneas son sólidas y representan las rutas que han sido recorridas. El objetivo es crear un laberinto con estas líneas para atrapar a tus oponentes.
+
+3.    Evitar Chocar con Paredes y Líneas: Debes evitar chocar con las paredes del escenario o con las líneas creadas por tu propia moto o las de tus oponentes. Si tocas una línea o una pared, perderás y serás eliminado del juego.
+
+4.    Forzar a tus Oponentes a Chocar: La estrategia principal es cortar el camino de tus oponentes, haciendo que choquen contra las líneas que has dejado detrás o que se vean acorralados y choquen contra las paredes. Cada vez que uno de tus oponentes choca, ganas puntos.
+
+5.    Puntuación: El juego lleva un registro de la puntuación y muestra cuántos puntos ha ganado cada jugador. El objetivo es ganar la mayor cantidad de puntos posible al eliminar a tus oponentes y ser el último jugador en pie.
+
+6.    Velocidad y Dificultad: La velocidad de las motos de luz y la dificultad del juego pueden aumentar a medida que avanza el juego, lo que hace que sea más desafiante evitar colisiones y eliminar a los oponentes.
 
 ## Otros
 
