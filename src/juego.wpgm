@@ -1,8 +1,62 @@
 import wollok.game.*
-import pepita.*
+import motos.*
 
-program juego {
-	game.title("Juego Base")
-	game.addVisual(pepita)
+program Tron {
+	
+	// configurar el tablero
+	game.height(10)
+	game.width(10)
+	game.title("Tron: Batalla de Motos de Luz")
+	//game.ground("paredLadrillos3.jpg")
+	
+	// agregar el motoRoja al tablero
+	motoRoja.position(game.at(4, 7))
+	game.addVisual(motoRoja)
+	
+	keyboard.up().onPressDo( {
+		motoRoja.arriba()
+	} )
+	keyboard.down().onPressDo( {
+		motoRoja.abajo()
+	} )
+	keyboard.right().onPressDo( {
+		motoRoja.derecha()
+	} )
+	keyboard.left().onPressDo( {
+		motoRoja.izquierda()
+	} )
+	
+	
+	// agregar el motoAmarilla al tablero
+	motoAmarilla.position(game.at(7, 4))
+	game.addVisual(motoAmarilla)
+	
+	keyboard.w().onPressDo( {
+		motoAmarilla.arriba()
+	} )
+	keyboard.s().onPressDo( {
+		motoAmarilla.abajo()
+	} )
+	keyboard.d().onPressDo( {
+		motoAmarilla.derecha()
+	} )
+	keyboard.a().onPressDo( {
+		motoAmarilla.izquierda()
+	} )
+	
+	game.onTick(1000, "defaul", {
+		motoAmarilla.moverEnUltimaDireccion()
+	})
+	
+	//game.removeTickEvent("defaul")
+	
+	keyboard.p().onPressDo( {
+		game.removeTickEvent("defaul")
+		game.onTick(100, "defaul", {
+		motoAmarilla.moverEnUltimaDireccion()
+	})
+		
+	} )
+	
 	game.start()
 }
