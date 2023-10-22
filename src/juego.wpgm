@@ -4,8 +4,8 @@ import motos.*
 program Tron {
 	
 	// configurar el tablero
-	game.height(10)
-	game.width(10)
+	game.height(14)
+	game.width(25)
 	game.title("Tron: Batalla de Motos de Luz")
 	//game.ground("paredLadrillos3.jpg")
 	
@@ -44,6 +44,22 @@ program Tron {
 		motoAmarilla.izquierda()
 	} )
 	
+	//movimiento automatico moto amarilla
+	game.onTick(1000, "movimientoNormal", {
+		motoRoja.moverEnUltimaDireccion()
+	})
+	
+	//game.removeTickEvent("defaul")
+	
+	keyboard.p().onPressDo( {
+		game.removeTickEvent("movimientoNormal")
+		game.onTick(100, "movimientoNormal", {
+		motoRoja.moverEnUltimaDireccion()
+	})
+		
+	} )
+	
+	//movimiento automatico moto amarilla
 	game.onTick(1000, "movimientoNormal", {
 		motoAmarilla.moverEnUltimaDireccion()
 	})
@@ -57,6 +73,7 @@ program Tron {
 	})
 		
 	} )
+	
 	
 	game.start()
 }

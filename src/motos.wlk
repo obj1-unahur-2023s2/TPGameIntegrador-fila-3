@@ -2,6 +2,7 @@ import wollok.game.*
 
 object motoRoja {
 	var position
+	var ultimaDireccion = "arriba"
 	
 	method image() = "MotoRoja.png"
 	method position(unaPosicion) {
@@ -11,27 +12,43 @@ object motoRoja {
 	
 	
 	method arriba() {
+		ultimaDireccion = "arriba"
 		if(position.y() < game.height() - 1 ) {
 			position = position.up(1)
 		}
 	}
 	
 	method abajo() {
+		ultimaDireccion = "abajo"
 		if(position.y() > 0 ) {
 			position = position.down(1)
 		}
 	}
 	
 	method derecha() {
+		ultimaDireccion = "derecha"
 		if(position.x() < game.width() -1 ) {
 			position = position.right(1)
 		}
 	}
 	
 	method izquierda() {
+		ultimaDireccion = "izquierda"
 		if(position.x() > 0 ) {
 			position = position.left(1)
 		}
+	}
+	
+	method moverEnUltimaDireccion(){
+		if(ultimaDireccion == "arriba"){
+		self.arriba()
+		}else if (ultimaDireccion == "derecha"){
+			self.derecha()
+		} else if (ultimaDireccion == "abajo"){
+			self.abajo()
+			}else {
+			self.izquierda()
+				}
 	}
 	
 }
@@ -48,14 +65,14 @@ object motoAmarilla {
 	method position() = position
 	
 	method arriba() {
-		//ultimaDireccion = "arriba"
-		
+		ultimaDireccion = "arriba"
 		if(position.y() < game.height() - 1 ) {
 			position = position.up(1)
 		}
 	}
 	
 	method abajo() {
+		ultimaDireccion = "abajo"
 		if(position.y() > 0 ) {
 			position = position.down(1)
 		}
@@ -63,13 +80,13 @@ object motoAmarilla {
 	
 	method derecha() {
 		ultimaDireccion = "derecha"
-		
 		if(position.x() < game.width() -1 ) {
 			position = position.right(1)
 		}
 	}
 	
 	method izquierda() {
+		ultimaDireccion = "izquierda"
 		if(position.x() > 0 ) {
 			position = position.left(1)
 		}
