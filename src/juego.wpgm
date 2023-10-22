@@ -44,15 +44,15 @@ program Tron {
 		motoAmarilla.izquierda()
 	} )
 	
-	game.onTick(1000, "defaul", {
+	game.onTick(1000, "movimientoNormal", {
 		motoAmarilla.moverEnUltimaDireccion()
 	})
 	
 	//game.removeTickEvent("defaul")
 	
 	keyboard.p().onPressDo( {
-		game.removeTickEvent("defaul")
-		game.onTick(100, "defaul", {
+		game.removeTickEvent("movimientoNormal")
+		game.onTick(100, "movimientoNormal", {
 		motoAmarilla.moverEnUltimaDireccion()
 	})
 		
