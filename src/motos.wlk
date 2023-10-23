@@ -53,11 +53,11 @@ object motoRoja {
 	
 }
 
-object motoAmarilla {
+object motoAzul {
 	var position
 	var ultimaDireccion = "arriba"
 	
-	method image() = "MotoAmarilla.png"
+	method image() = "MotoAzul.png"
 	method position(unaPosicion) {
 		position = unaPosicion
 	}
@@ -108,7 +108,7 @@ object motoAmarilla {
 object lineaDeLuzRoja {
 	var property position
 	
-	method image() = "lineaRoja.png"
+	method image() = "estelaRoja.png"
 	
 	
 }

@@ -27,27 +27,27 @@ program Tron {
 	} )
 	
 	
-	/*
+	
 	lineaDeLuzRoja.position(game.at(0, 0))
 	game.addVisual(lineaDeLuzRoja)
-	*/
+	
 	
 	
 	// agregar el motoAmarilla al tablero
-	motoAmarilla.position(game.at(7, 4))
-	game.addVisual(motoAmarilla)
+	motoAzul.position(game.at(7, 4))
+	game.addVisual(motoAzul)
 	
 	keyboard.w().onPressDo( {
-		motoAmarilla.arriba()
+		motoAzul.arriba()
 	} )
 	keyboard.s().onPressDo( {
-		motoAmarilla.abajo()
+		motoAzul.abajo()
 	} )
 	keyboard.d().onPressDo( {
-		motoAmarilla.derecha()
+		motoAzul.derecha()
 	} )
 	keyboard.a().onPressDo( {
-		motoAmarilla.izquierda()
+		motoAzul.izquierda()
 	} )
 	
 	//movimiento automatico moto amarilla
@@ -67,7 +67,7 @@ program Tron {
 	
 	//movimiento automatico moto amarilla
 	game.onTick(1000, "movimientoNormal", {
-		motoAmarilla.moverEnUltimaDireccion()
+		motoAzul.moverEnUltimaDireccion()
 	})
 	
 	//game.removeTickEvent("defaul")
@@ -75,7 +75,7 @@ program Tron {
 	keyboard.p().onPressDo( {
 		game.removeTickEvent("movimientoNormal")
 		game.onTick(100, "movimientoNormal", {
-		motoAmarilla.moverEnUltimaDireccion()
+		motoAzul.moverEnUltimaDireccion()
 	})
 		
 	} )
