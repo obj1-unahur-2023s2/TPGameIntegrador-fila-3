@@ -4,8 +4,8 @@ import motos.*
 program Tron {
 	
 	// configurar el tablero
-	game.height(14)
-	game.width(25)
+	game.height(15)
+	game.width(20)
 	game.title("Tron: Batalla de Motos de Luz")
 	//game.ground("paredLadrillos3.jpg")
 	
@@ -25,6 +25,12 @@ program Tron {
 	keyboard.left().onPressDo( {
 		motoRoja.izquierda()
 	} )
+	
+	
+	/*
+	lineaDeLuzRoja.position(game.at(0, 0))
+	game.addVisual(lineaDeLuzRoja)
+	*/
 	
 	
 	// agregar el motoAmarilla al tablero
@@ -74,6 +80,7 @@ program Tron {
 		
 	} )
 	
+	game.boardGround("TronGrid.png")
 	
 	game.start()
 }

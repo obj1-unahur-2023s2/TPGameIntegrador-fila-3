@@ -105,6 +105,14 @@ object motoAmarilla {
 	}
 }
 
+object lineaDeLuzRoja {
+	var property position
+	
+	method image() = "lineaRoja.png"
+	
+	
+}
+
 object ultimaDireccionMRojo{
 	var property ultimaDireccionRojo
 	
