@@ -1,18 +1,15 @@
 import wollok.game.*
 
 object motoRoja {
-	var position
+	var property position
 	var ultimaDireccion = "arriba"
+	var imagen = "MotoRojaE.png"
 	
-	method image() = "MotoRoja.png"
-	method position(unaPosicion) {
-		position = unaPosicion
-	}
-	method position() = position
-	
+	method image() = imagen
 	
 	method arriba() {
 		ultimaDireccion = "arriba"
+		imagen = "MotoRojaN.png"
 		if(position.y() < game.height() - 1 ) {
 			position = position.up(1)
 		}
@@ -20,6 +17,7 @@ object motoRoja {
 	
 	method abajo() {
 		ultimaDireccion = "abajo"
+		imagen = "MotoRojaS.png"
 		if(position.y() > 0 ) {
 			position = position.down(1)
 		}
@@ -27,6 +25,7 @@ object motoRoja {
 	
 	method derecha() {
 		ultimaDireccion = "derecha"
+		imagen = "MotoRojaE.png"
 		if(position.x() < game.width() -1 ) {
 			position = position.right(1)
 		}
@@ -34,6 +33,7 @@ object motoRoja {
 	
 	method izquierda() {
 		ultimaDireccion = "izquierda"
+		imagen = "MotoRojaO.png"
 		if(position.x() > 0 ) {
 			position = position.left(1)
 		}
@@ -54,18 +54,20 @@ object motoRoja {
 }
 
 object motoAzul {
-	var position
-	var ultimaDireccion = "arriba"
+	var property position
+	var ultimaDireccion = "derecha"
+	var imagen = "MotoAzulE.png"
 	
-	method image() = "MotoAzul.png"
+	method image() = imagen
+	
 	method position(unaPosicion) {
 		position = unaPosicion
 	}
-	
-	method position() = position
+
 	
 	method arriba() {
 		ultimaDireccion = "arriba"
+		imagen = "MotoAzulN.png"
 		if(position.y() < game.height() - 1 ) {
 			position = position.up(1)
 		}
@@ -73,6 +75,7 @@ object motoAzul {
 	
 	method abajo() {
 		ultimaDireccion = "abajo"
+		imagen = "MotoAzulS.png"
 		if(position.y() > 0 ) {
 			position = position.down(1)
 		}
@@ -80,6 +83,7 @@ object motoAzul {
 	
 	method derecha() {
 		ultimaDireccion = "derecha"
+		imagen = "MotoAzulE.png"
 		if(position.x() < game.width() -1 ) {
 			position = position.right(1)
 		}
@@ -87,6 +91,7 @@ object motoAzul {
 	
 	method izquierda() {
 		ultimaDireccion = "izquierda"
+		imagen = "MotoAzulO.png"
 		if(position.x() > 0 ) {
 			position = position.left(1)
 		}
@@ -108,7 +113,7 @@ object motoAzul {
 object lineaDeLuzRoja {
 	var property position
 	
-	method image() = "estelaRoja.png"
+	method image() = "estelaRojaEstandar.png"
 	
 	
 }

@@ -10,7 +10,7 @@ program Tron {
 	//game.ground("paredLadrillos3.jpg")
 	
 	// agregar el motoRoja al tablero
-	motoRoja.position(game.at(4, 7))
+	motoRoja.position(game.at(15, 8))
 	game.addVisual(motoRoja)
 	
 	keyboard.up().onPressDo( {
@@ -27,14 +27,14 @@ program Tron {
 	} )
 	
 	
-	
+	// prueba agregando una estela de luz
 	lineaDeLuzRoja.position(game.at(0, 0))
 	game.addVisual(lineaDeLuzRoja)
 	
 	
 	
 	// agregar el motoAmarilla al tablero
-	motoAzul.position(game.at(7, 4))
+	motoAzul.position(game.at(5, 8))
 	game.addVisual(motoAzul)
 	
 	keyboard.w().onPressDo( {
@@ -50,7 +50,7 @@ program Tron {
 		motoAzul.izquierda()
 	} )
 	
-	//movimiento automatico moto amarilla
+	//movimiento automatico moto roja
 	game.onTick(1000, "movimientoNormal", {
 		motoRoja.moverEnUltimaDireccion()
 	})
@@ -65,7 +65,7 @@ program Tron {
 		
 	} )
 	
-	//movimiento automatico moto amarilla
+	//movimiento automatico moto azul
 	game.onTick(1000, "movimientoNormal", {
 		motoAzul.moverEnUltimaDireccion()
 	})
