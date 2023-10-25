@@ -39,9 +39,9 @@ Jugabilidad:
 6.    Velocidad y Dificultad: La velocidad de las motos de luz y la dificultad del juego pueden aumentar a medida que avanza el juego, lo que hace que sea más desafiante evitar colisiones y eliminar a los oponentes.
 
 ## Comandos
-JUGADOR 1: Flechas del teclado ← ↑ → ↓              
+    JUGADOR 1: Flechas del teclado ← ↑ → ↓ 
 
-JUGADOR 2: Teclas a w d s
+    JUGADOR 2: Teclas a w d s
 
 ## Otros
 El modo "Motos de Luz" es una parte icónica de la película "Tron" y ha sido adaptado en numerosos videojuegos y recreaciones a lo largo de los años. Es conocido por su jugabilidad competitiva y estratégica, donde la velocidad y la toma de decisiones rápidas son esenciales para el éxito.
