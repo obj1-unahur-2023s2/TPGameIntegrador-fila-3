@@ -39,7 +39,8 @@ Jugabilidad:
 6.    Velocidad y Dificultad: La velocidad de las motos de luz y la dificultad del juego pueden aumentar a medida que avanza el juego, lo que hace que sea más desafiante evitar colisiones y eliminar a los oponentes.
 
 ## Comandos
-JUGADOR 1: Flechas del teclado ← ↑ → ↓
+JUGADOR 1: Flechas del teclado ← ↑ → ↓              
+
 JUGADOR 2: Teclas a w d s
 
 ## Otros
