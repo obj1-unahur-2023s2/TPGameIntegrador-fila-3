@@ -155,8 +155,6 @@ object jugador2 {
 		self.cambiarPosicion()
 		}
 	}
-	
-	
 }
 
 
@@ -167,12 +165,6 @@ class EstelaRoja {
 	method image() = imagen
 	
 	
-}
-
-class Muro {
-	var property position
-	
-	method image() = "muroUno.png"
 }
 
 object ultimaDireccionMRojo{

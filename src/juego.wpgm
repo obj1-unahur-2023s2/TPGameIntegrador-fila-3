@@ -1,5 +1,7 @@
 import wollok.game.*
 import motos.*
+import borde.*
+import muros.*
 
 program Tron {
 	
@@ -11,71 +13,74 @@ program Tron {
 	game.title("Tron: Batalla de Motos de Luz")
 	game.boardGround("fondoNegro.png")
 	
-	game.onTick(velocidad, "movimiento", {jugador1.arriba()})
+	// agregar evento de movimiento automatico al jugador 1
+	game.onTick(velocidad, "movimiento1", {jugador1.arriba()})
 	
-	// agregar el motoRoja al tablero
-	//jugador1.position(game.at(15, 8))
+	// agregar la motoRoja al tablero junto con su estela
 	game.addVisual(jugador1)
 	jugador1.estela().forEach({e => game.addVisual(e)})
 	
+	// agregar los movimientos a sus respectivas direcciones
 	keyboard.up().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento1")
+		game.onTick(velocidad, "movimiento1",{
 			jugador1.arriba()
 	} )})
 	keyboard.down().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento1")
+		game.onTick(velocidad, "movimiento1",{
 			jugador1.abajo()
 	} )})
 	keyboard.right().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento1")
+		game.onTick(velocidad, "movimiento1",{
 			jugador1.derecha()
 	} )})
 	keyboard.left().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento1")
+		game.onTick(velocidad, "movimiento1",{
 			jugador1.izquierda()
 	} )})
-	
-	
-	
 
 	
-	/*
-	// prueba agregando una estela de luz
-	lineaDeLuzRoja.position(game.at(0, 0))
-	game.addVisual(lineaDeLuzRoja)
-	*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// agregar evento de movimiento automatico al jugador 2
+	game.onTick(velocidad, "movimiento2", {jugador2.arriba()})
 	
-	
-	//agregar el motoAmarilla al tablero
-	
+	// agregar la motoAzul al tablero junto con su estela
 	game.addVisual(jugador2)
 	jugador2.estela().forEach({e => game.addVisual(e)})
 	
+	// agregar los movimientos a sus respectivas direcciones
 	keyboard.w().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento2")
+		game.onTick(velocidad, "movimiento2",{
 			jugador2.arriba()
 	} )})
 	keyboard.s().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento2")
+		game.onTick(velocidad, "movimiento2",{
 			jugador2.abajo()
 	} )})
 	keyboard.d().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento2")
+		game.onTick(velocidad, "movimiento2",{
 			jugador2.derecha()
 	} )})
 	keyboard.a().onPressDo( {
-		game.removeTickEvent("movimiento")
-		game.onTick(velocidad, "movimiento",{
+		game.removeTickEvent("movimiento2")
+		game.onTick(velocidad, "movimiento2",{
 			jugador2.izquierda()
 	} )})
 	
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// agregar borde
+	borde.bordeO().forEach({b => game.addVisual(b)})
+	borde.bordeE().forEach({b => game.addVisual(b)})
+	borde.bordeN().forEach({b => game.addVisual(b)})
+	borde.bordeS().forEach({b => game.addVisual(b)})
 	
 	game.start()
 	/*game.removeTickEvent("defaul")
