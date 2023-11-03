@@ -3,12 +3,13 @@ import motos.*
 
 program Tron {
 	
-	var velocidad = 50
+	var velocidad = 1
 	
 	// configurar el tablero
-	game.height(15)
-	game.width(20)
+	game.height(20)
+	game.width(25)
 	game.title("Tron: Batalla de Motos de Luz")
+	game.boardGround("fondoNegro.png")
 	
 	game.onTick(velocidad, "movimiento", {jugador1.arriba()})
 	
@@ -38,9 +39,9 @@ program Tron {
 			jugador1.izquierda()
 	} )})
 	
-	game.boardGround("TronGrid.png")
 	
-	game.start()
+	
+
 	
 	/*
 	// prueba agregando una estela de luz
@@ -48,46 +49,36 @@ program Tron {
 	game.addVisual(lineaDeLuzRoja)
 	*/
 	
-	/*
-	agregar el motoAmarilla al tablero
 	
-	motoAzul.position(game.at(5, 8))
-	game.addVisual(motoAzul)
+	//agregar el motoAmarilla al tablero
+	
+	game.addVisual(jugador2)
+	jugador2.estela().forEach({e => game.addVisual(e)})
 	
 	keyboard.w().onPressDo( {
-		motoAzul.arriba()
-	} )
+		game.removeTickEvent("movimiento")
+		game.onTick(velocidad, "movimiento",{
+			jugador2.arriba()
+	} )})
 	keyboard.s().onPressDo( {
-		motoAzul.abajo()
-	} )
+		game.removeTickEvent("movimiento")
+		game.onTick(velocidad, "movimiento",{
+			jugador2.abajo()
+	} )})
 	keyboard.d().onPressDo( {
-		motoAzul.derecha()
-	} )
+		game.removeTickEvent("movimiento")
+		game.onTick(velocidad, "movimiento",{
+			jugador2.derecha()
+	} )})
 	keyboard.a().onPressDo( {
-		motoAzul.izquierda()
-	} )
+		game.removeTickEvent("movimiento")
+		game.onTick(velocidad, "movimiento",{
+			jugador2.izquierda()
+	} )})
 	
-	//movimiento automatico moto roja
-	game.onTick(1000, "movimientoNormal", {
-		motoRoja.moverEnUltimaDireccion()
-	})
 	
-	//game.removeTickEvent("defaul")
-	
-	keyboard.p().onPressDo( {
-		game.removeTickEvent("movimientoNormal")
-		game.onTick(100, "movimientoNormal", {
-		motoRoja.moverEnUltimaDireccion()
-	})
-		
-	} )
-	
-	//movimiento automatico moto azul
-	game.onTick(1000, "movimientoNormal", {
-		motoAzul.moverEnUltimaDireccion()
-	})
-	
-	//game.removeTickEvent("defaul")
+	game.start()
+	/*game.removeTickEvent("defaul")
 	
 	keyboard.p().onPressDo( {
 		game.removeTickEvent("movimientoNormal")
