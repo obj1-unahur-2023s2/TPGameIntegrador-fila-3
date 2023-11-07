@@ -4,6 +4,7 @@ object jugador1 {
 	var ultimaDireccion
 	var property position = game.center()
 	var property image = "MotoRojaN.png"
+	var property vidas = 3
 	
 	const estel1 = new EstelaRoja(position = game.at(position.x() -1, position.y()))
 	const estel2 = new EstelaRoja(position = game.at(estel1.position().x() -1, estel1.position().y()))
@@ -85,15 +86,15 @@ object jugador2 {
 	var property position = game.center()
 	var property image = "MotoAzulN.png"
 	
-	const estel1 = new EstelaRoja(position = game.at(position.x() -1, position.y()))
-	const estel2 = new EstelaRoja(position = game.at(estel1.position().x() -1, estel1.position().y()))
-	const estel3 = new EstelaRoja(position = game.at(estel2.position().x() -1, estel2.position().y()))
-	const estel4 = new EstelaRoja(position = game.at(estel3.position().x() -1, estel3.position().y()))
-	const estel5 = new EstelaRoja(position = game.at(estel4.position().x() -1, estel4.position().y()))
-	const estel6 = new EstelaRoja(position = game.at(estel5.position().x() -1, estel5.position().y()))
-	const estel7 = new EstelaRoja(position = game.at(estel6.position().x() -1, estel6.position().y()))
-	const estel8 = new EstelaRoja(position = game.at(estel7.position().x() -1, estel7.position().y()))
-	const estel9 = new EstelaRoja(position = game.at(estel8.position().x() -1, estel8.position().y()))
+	const estel1 = new EstelaAzul(position = game.at(position.x() -1, position.y()))
+	const estel2 = new EstelaAzul(position = game.at(estel1.position().x() -1, estel1.position().y()))
+	const estel3 = new EstelaAzul(position = game.at(estel2.position().x() -1, estel2.position().y()))
+	const estel4 = new EstelaAzul(position = game.at(estel3.position().x() -1, estel3.position().y()))
+	const estel5 = new EstelaAzul(position = game.at(estel4.position().x() -1, estel4.position().y()))
+	const estel6 = new EstelaAzul(position = game.at(estel5.position().x() -1, estel5.position().y()))
+	const estel7 = new EstelaAzul(position = game.at(estel6.position().x() -1, estel6.position().y()))
+	const estel8 = new EstelaAzul(position = game.at(estel7.position().x() -1, estel7.position().y()))
+	const estel9 = new EstelaAzul(position = game.at(estel8.position().x() -1, estel8.position().y()))
 	
 	const property estela = [estel1, estel2, estel3, estel4 , estel5 , estel6 ,estel7 , estel8, estel9]
 	var property ultPosDeLaEstela
@@ -160,19 +161,14 @@ object jugador2 {
 
 class EstelaRoja {
 	var property position
-	var imagen = "estelaRojaEstandar.png"
+	const imagen = "estelaRojaEstandar.png"
+	
+	method image() = imagen	
+}
+
+class EstelaAzul {
+	var property position
+	const imagen = "estelaAzulEstandar.png"
 	
 	method image() = imagen
-	
-	
-}
-
-object ultimaDireccionMRojo{
-	var property ultimaDireccionRojo
-	
-}
-
-object ultimaDireccionMAmarillo{
-	var property ultimaDireccionAmarillo
-	
 }
