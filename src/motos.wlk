@@ -75,6 +75,10 @@ object jugador1 {
 		self.cambiarPosicion()
 		}
 	}
+	
+	method perder() {
+		//TODO: Código autogenerado
+	}
 }
 
 
@@ -153,6 +157,9 @@ object jugador2 {
 		self.cambiarPosicion()
 		}
 	}
+	method perder() {
+		//TODO: Código autogenerado 
+	}
 }
 
 
@@ -193,6 +200,29 @@ object vidasRojo {
 	const property vidas = [vida1, vida2, vida3]
 	
 	method perderVida() {
-		vidas.remove(vidas.last())
+		if(vidas.size() > 1) {
+			vidas.remove(vidas.last())
+		}
+		else {
+			jugador1.perder()
+		}
+	}
+}
+
+object vidasAzul {
+	var property position = game.origin()
+	const vida1 = new CorazonAzul(position = game.at(position.x(), position.y()))
+	const vida2 = new CorazonAzul(position = game.at(position.x() + 1, position.y()))
+	const vida3 = new CorazonAzul(position = game.at(position.x() +2, position.y()))
+	
+	const property vidas = [vida1, vida2, vida3]
+	
+	method perderVida() {
+		if(vidas.size() > 1) {
+			vidas.remove(vidas.last())
+		}
+		else {
+			jugador2.perder()
+		}
 	}
 }
