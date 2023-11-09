@@ -8,10 +8,12 @@ program Tron {
 	var velocidad = 10
 	
 	// configurar el tablero
-	game.height(40)
-	game.width(45)
+	game.height(20)
+	game.width(35)
 	game.title("Tron: Batalla de Motos de Luz")
 	game.boardGround("fondoNegro.png")
+	
+	
 	
 	// agregar evento de movimiento automatico al jugador 1
 	game.onTick(velocidad, "movimiento1", {jugador1.arriba()})
@@ -19,6 +21,8 @@ program Tron {
 	// agregar la motoRoja al tablero junto con su estela
 	game.addVisual(jugador1)
 	jugador1.estela().forEach({e => game.addVisual(e)})
+	game.addVisual(vidasRojo)
+	vidasRojo.vidas().forEach({v => game.addVisual(v)})
 	
 	// agregar los movimientos a sus respectivas direcciones
 	keyboard.up().onPressDo( {
@@ -41,7 +45,6 @@ program Tron {
 		game.onTick(velocidad, "movimiento1",{
 			jugador1.izquierda()
 	} )})
-
 	
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,15 +78,16 @@ program Tron {
 	} )})
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////
-	
+	/*
 	// agregar borde
 	borde.bordeO().forEach({b => game.addVisual(b)})
 	borde.bordeE().forEach({b => game.addVisual(b)})
 	borde.bordeN().forEach({b => game.addVisual(b)})
 	borde.bordeS().forEach({b => game.addVisual(b)})
-	
+	*/
 	// coliciones
-	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.center())})
+	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.center()); game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida() })
+	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.center())})
 	
 	game.start()
 	

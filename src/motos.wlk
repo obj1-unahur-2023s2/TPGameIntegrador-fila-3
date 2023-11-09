@@ -4,7 +4,6 @@ object jugador1 {
 	var ultimaDireccion
 	var property position = game.center()
 	var property image = "MotoRojaN.png"
-	var property vidas = 3
 	
 	const estel1 = new EstelaRoja(position = game.at(position.x() -1, position.y()))
 	const estel2 = new EstelaRoja(position = game.at(estel1.position().x() -1, estel1.position().y()))
@@ -76,14 +75,12 @@ object jugador1 {
 		self.cambiarPosicion()
 		}
 	}
-	
-	
 }
 
 
 object jugador2 {
 	var ultimaDireccion
-	var property position = game.center()
+	var property position = game.at(game.width() - 2, game.height() - 2)
 	var property image = "MotoAzulN.png"
 	
 	const estel1 = new EstelaAzul(position = game.at(position.x() -1, position.y()))
@@ -161,14 +158,41 @@ object jugador2 {
 
 class EstelaRoja {
 	var property position
-	const imagen = "estelaRojaEstandar.png"
+	const image = "estelaRojaEstandar.png"
 	
-	method image() = imagen	
+	method image() = image
 }
 
 class EstelaAzul {
 	var property position
-	const imagen = "estelaAzulEstandar.png"
+	const image = "estelaAzulEstandar.png"
 	
-	method image() = imagen
+	method image() = image
+}
+
+class CorazonRojo {
+	var property position
+	const image = "corazonRojo.png"
+	
+	method image() = image
+}
+
+class CorazonAzul {
+	var property position
+	const image = "corazonAzul.png"
+	 
+	method image() = image
+}
+
+object vidasRojo {
+	var property position = game.at(0, game.height() - 1)
+	const vida1 = new CorazonRojo(position = game.at(position.x(), position.y() - 1))
+	const vida2 = new CorazonRojo(position = game.at(position.x() + 1, position.y() - 1))
+	const vida3 = new CorazonRojo(position = game.at(position.x() +2, position.y() - 1))
+	
+	const property vidas = [vida1, vida2, vida3]
+	
+	method perderVida() {
+		vidas.remove(vidas.last())
+	}
 }
