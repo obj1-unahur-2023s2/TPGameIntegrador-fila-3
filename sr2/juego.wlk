@@ -1,7 +1,13 @@
 import wollok.game.*
 
 object juego {
-	method inicio() {
-	game.start()
+	
+	method iniciar(){
+		game.clear()
+	// configurar el tablero
+	game.height(30)
+	game.width(20)
+	
+	
 	}
 }

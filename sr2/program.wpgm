@@ -1,10 +1,9 @@
 import wollok.game.*
-import main.gameManager
+import menu.*
 
-///////// PROGRAM /////////
 
-program juego { 	
-	gameManager.inicializar() // fija ciertas constantes (fondo, ancho, alto, etc)
-	gameManager.mostrarMenu()
+program tron {
+	menu.inicializar()
+	//menu.mostrarMenu()
 	game.start()
 }
