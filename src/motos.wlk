@@ -2,7 +2,7 @@ import wollok.game.*
 
 object jugador1 {
 	var ultimaDireccion
-	var property position = game.center()
+	var property position = game.at(4, game.height() - (game.height().div(2)))
 	var property image = "MotoRojaN.png"
 	
 	const estel1 = new EstelaRoja(position = game.at(position.x() -1, position.y()))
@@ -76,8 +76,10 @@ object jugador1 {
 		}
 	}
 	
+	method posicionInicial() = game.at(4, game.height() - (game.height().div(2)))
+	
 	method perder() {
-		//TODO: Código autogenerado
+		estela.clear()
 	}
 }
 
@@ -200,7 +202,7 @@ object vidasRojo {
 	const property vidas = [vida1, vida2, vida3]
 	
 	method perderVida() {
-		if(vidas.size() > 1) {
+		if(vidas.size() > 0) {
 			vidas.remove(vidas.last())
 		}
 		else {
@@ -218,7 +220,7 @@ object vidasAzul {
 	const property vidas = [vida1, vida2, vida3]
 	
 	method perderVida() {
-		if(vidas.size() > 1) {
+		if(vidas.size() > 0) {
 			vidas.remove(vidas.last())
 		}
 		else {

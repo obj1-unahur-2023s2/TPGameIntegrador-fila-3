@@ -100,7 +100,7 @@ program Tron {
 	*/
 	// coliciones
 	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.center()); game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida() })
-	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.center()); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida()  })
+	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.center()); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida() })
 	
 	game.start()
 } 
