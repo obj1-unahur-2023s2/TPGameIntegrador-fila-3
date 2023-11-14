@@ -1,9 +1,0 @@
-import wollok.game.*
-import menu.*
-
-
-program tron {
-	menu.inicializar()
-	//menu.mostrarMenu()
-	game.start()
-}
