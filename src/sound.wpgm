@@ -1,0 +1,21 @@
+import wollok.game.*
+
+
+object musica {
+	
+	method play(){
+		game.sound("End of Line TRON.mp3").play()
+	}
+}
+
+
+program soundProgram {
+	const sound = game.sound("End of Line TRON.mp3")
+	sound.shouldLoop(true)
+	keyboard.p().onPressDo({sound.pause()})
+	keyboard.o().onPressDo({sound.resume()})
+	keyboard.i().onPressDo({sound.stop()})
+	game.schedule(5000000, {sound.play()})
+	game.start()
+	
+	}
