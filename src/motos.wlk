@@ -2,7 +2,7 @@ import wollok.game.*
 
 object jugador1 {
 	var ultimaDireccion
-	var property position = game.at(4, game.height() - (game.height().div(2)))
+	var property position = game.at(10 ,40)
 	var property image = "MotoRojaN.png"
 	
 	const estel1 = new EstelaRoja(position = game.at(position.x() -1, position.y()))
@@ -14,8 +14,17 @@ object jugador1 {
 	const estel7 = new EstelaRoja(position = game.at(estel6.position().x() -1, estel6.position().y()))
 	const estel8 = new EstelaRoja(position = game.at(estel7.position().x() -1, estel7.position().y()))
 	const estel9 = new EstelaRoja(position = game.at(estel8.position().x() -1, estel8.position().y()))
+	const estel10 = new EstelaRoja(position = game.at(estel9.position().x() -1, estel9.position().y()))
+	const estel11 = new EstelaRoja(position = game.at(estel10.position().x() -1, estel10.position().y()))
+	const estel12 = new EstelaRoja(position = game.at(estel11.position().x() -1, estel11.position().y()))
+	const estel13 = new EstelaRoja(position = game.at(estel12.position().x() -1, estel12.position().y()))
+	const estel14 = new EstelaRoja(position = game.at(estel13.position().x() -1, estel13.position().y()))
 	
-	const property estela = [estel1, estel2, estel3, estel4 , estel5 , estel6 ,estel7 , estel8, estel9]
+	const property estela = [estel1, estel2, estel3, estel4 , estel5 , estel6 ,estel7 , estel8, estel9 , estel10
+		,estel11 , estel12 , estel13 ,estel14 ]
+	
+	
+	
 	var property ultPosDeLaEstela
 	var property ultPosMoto
 	
@@ -76,17 +85,15 @@ object jugador1 {
 		}
 	}
 	
-	method posicionInicial() = game.at(4, game.height() - (game.height().div(2)))
-	
 	method perder() {
-		estela.clear()
+		//TODO: Código autogenerado
 	}
 }
 
 
 object jugador2 {
 	var ultimaDireccion
-	var property position = game.at(game.width() - 2, game.height() - 2)
+	var property position = (game.at(70 ,30))
 	var property image = "MotoAzulN.png"
 	
 	const estel1 = new EstelaAzul(position = game.at(position.x() -1, position.y()))
@@ -98,8 +105,15 @@ object jugador2 {
 	const estel7 = new EstelaAzul(position = game.at(estel6.position().x() -1, estel6.position().y()))
 	const estel8 = new EstelaAzul(position = game.at(estel7.position().x() -1, estel7.position().y()))
 	const estel9 = new EstelaAzul(position = game.at(estel8.position().x() -1, estel8.position().y()))
+	const estel10 = new EstelaAzul(position = game.at(estel9.position().x() -1, estel9.position().y()))
+	const estel11 = new EstelaAzul(position = game.at(estel10.position().x() -1, estel10.position().y()))
+	const estel12 = new EstelaAzul(position = game.at(estel11.position().x() -1, estel11.position().y()))
+	const estel13 = new EstelaAzul(position = game.at(estel12.position().x() -1, estel12.position().y()))
+	const estel14 = new EstelaAzul(position = game.at(estel13.position().x() -1, estel13.position().y()))
 	
-	const property estela = [estel1, estel2, estel3, estel4 , estel5 , estel6 ,estel7 , estel8, estel9]
+	const property estela = [estel1, estel2, estel3, estel4 , estel5 , estel6 ,estel7 , estel8, estel9 , estel10
+		,estel11 , estel12 , estel13 ,estel14 ]
+	
 	var property ultPosDeLaEstela
 	var property ultPosMoto
 	
@@ -202,7 +216,7 @@ object vidasRojo {
 	const property vidas = [vida1, vida2, vida3]
 	
 	method perderVida() {
-		if(vidas.size() > 0) {
+		if(vidas.size() > 1) {
 			vidas.remove(vidas.last())
 		}
 		else {
@@ -220,11 +234,10 @@ object vidasAzul {
 	const property vidas = [vida1, vida2, vida3]
 	
 	method perderVida() {
-		if(vidas.size() > 0) {
+		if(vidas.size() > 1) {
 			vidas.remove(vidas.last())
 		}
 		else {
 			jugador2.perder()
 		}
 	}
-}
