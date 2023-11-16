@@ -6,7 +6,7 @@ import musica.*
 
 
 object fondoMenu {
-	const property image = "assets/tronlegacy.png"
+	const property image = "img/fondo1.jpg"
 	//const property imgControles1= "img/flechas.png"
 	//const property imgControles2= "img/flecha2.png"
 	//const property imgMoto= "img/moto1.png"
@@ -19,7 +19,7 @@ object tron {
 	const jugador1 = new Jugador(position = game.at(10 ,40), color = "Roja", ultimaDireccion = "Derecha")
 	const jugador2 = new Jugador(position = game.at(70 ,30), color = "Azul", ultimaDireccion = "Izquierda")
 	const vidasRojo = new Vidas(position = game.at(0, game.height() - 1), colorVida = "Rojo")
-	const vidasAzul = new Vidas(position = game.origin(), colorVida = "Azul")
+	const vidasAzul = new Vidas(position = game.at(30,game.height() - 1), colorVida = "Azul")
 	
 	const velocidad = 50	
 	
@@ -33,16 +33,15 @@ object tron {
 	}
 	
 	method iniciarJuego(){
-		game.clear()
 			musicaMenu.sacarMusica(musicaMenu.musicaInicio())
 			musicaEnPartida.reproducir(musicaEnPartida.musicaEnJuego())
-		self.movimientoMotos1()
-		self.movimientoMotos2()
+		self.funcionesMotos1()
+		self.funcionesMotos2()
 	}
 	
 	
 	
-	method movimientoMotos1(/*jugadorNro*/){
+	method funcionesMotos1(){
 		
 	//agregar evento de movimiento automatico al jugador 1
 	game.onTick(velocidad, "movimiento1", {jugador1.mover("Derecha")})
@@ -73,13 +72,12 @@ object tron {
 		game.onTick(velocidad, "movimiento1",{
 			jugador1.mover("Izquierda")
 	} )})
-	
-	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.at(10 ,30)) ; game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida() })
+	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.at(10 ,30)); jugador1.ultimaDireccion("Derecha"); game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida("jugador1"); jugador2.position(game.at(70 ,30))})
 }
 
-	//dada
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-	method movimientoMotos2(/*jugadorNro*/){
+
+
+	method funcionesMotos2(){
 	// agregar evento de movimiento automatico al jugador 2
 	game.onTick(velocidad, "movimiento2", {jugador2.mover("Izquierda")})
 	
@@ -93,9 +91,7 @@ object tron {
 		jugador2.agregarEstela(new EstelaAzul(position = jugador2.ultPosDeLaEstela()))
 		game.addVisual(jugador2.estela().last())
 	})
-	* 
 	*/
-	
 	// agregar los movimientos a sus respectivas direcciones
 	keyboard.w().onPressDo( {
 		game.removeTickEvent("movimiento2")
@@ -117,21 +113,8 @@ object tron {
 		game.onTick(velocidad, "movimiento2",{
 			jugador2.mover("Izquierda")
 	} )})
-	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.at(70 ,30)); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida()  })
-}
-	/////////////////////////////////////////////////////////////////////////////////////////////////
-	/*
-	// agregar borde
-	borde.bordeO().forEach({b => game.addVisual(b)})
-	borde.bordeE().forEach({b => game.addVisual(b)})
-	borde.bordeN().forEach({b => game.addVisual(b)})
-	borde.bordeS().forEach({b => game.addVisual(b)})
-	*/
-	// coliciones
-	//game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.at(10 ,30)) ; game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida() })
-	//game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.at(70 ,30)); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida()  })
-	
-	//game.start()
+	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.at(70 ,30)); jugador2.ultimaDireccion("Izquierda");game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida("jugador2"); jugador1.position(game.at(10 ,30))})
+	}
 } 
 
 
