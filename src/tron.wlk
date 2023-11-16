@@ -17,11 +17,16 @@ object fondoMenu {
 
 object tron {
 	
+	const jugador1 = new Jugador(position = game.at(10 ,40), color = "Roja", ultimaDireccion = "Derecha")
+	const jugador2 = new Jugador(position = game.at(70 ,30), color = "Azul", ultimaDireccion = "Izquierda")
+	const vidasRojo = new Vidas(position = game.at(0, game.height() - 1), colorVida = "Rojo")
+	const vidasAzul = new Vidas(position = game.origin(), colorVida = "Azul")
+	
 	const velocidad = 50	
 	
 	method inicio(){
 		game.addVisual(fondoMenu)
-			musicaMenu.reproducir(musicaMenu.musicaInicio())
+		musicaMenu.reproducir(musicaMenu.musicaInicio())
 		keyboard.f().onPressDo{
 			game.clear()
 			self.iniciarJuego()
@@ -41,7 +46,7 @@ object tron {
 	method movimientoMotos1(/*jugadorNro*/){
 		
 	//agregar evento de movimiento automatico al jugador 1
-	game.onTick(velocidad, "movimiento1", {jugador1.arriba()})
+	game.onTick(velocidad, "movimiento1", {jugador1.mover("Derecha")})
 	
 	game.addVisual(jugador1)
 	jugador1.estela().forEach({e => game.addVisual(e)})
@@ -52,22 +57,22 @@ object tron {
 	keyboard.up().onPressDo( {
 		game.removeTickEvent("movimiento1")
 		game.onTick(velocidad, "movimiento1",{
-			jugador1.arriba()
+			jugador1.mover("Arriba")
 	} )})
 	keyboard.down().onPressDo( {
 		game.removeTickEvent("movimiento1")
 		game.onTick(velocidad, "movimiento1",{
-			jugador1.abajo()
+			jugador1.mover("Abajo")
 	} )})
 	keyboard.right().onPressDo( {
 		game.removeTickEvent("movimiento1")
 		game.onTick(velocidad, "movimiento1",{
-			jugador1.derecha()
+			jugador1.mover("Derecha")
 	} )})
 	keyboard.left().onPressDo( {
 		game.removeTickEvent("movimiento1")
 		game.onTick(velocidad, "movimiento1",{
-			jugador1.izquierda()
+			jugador1.mover("Izquierda")
 	} )})
 	
 	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.at(10 ,30)) ; game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida() })
@@ -77,7 +82,7 @@ object tron {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	method movimientoMotos2(/*jugadorNro*/){
 	// agregar evento de movimiento automatico al jugador 2
-	game.onTick(velocidad, "movimiento2", {jugador2.arriba()})
+	game.onTick(velocidad, "movimiento2", {jugador2.mover("Izquierda")})
 	
 	// agregar la motoAzul al tablero junto con su estela
 	game.addVisual(jugador2)
@@ -96,22 +101,22 @@ object tron {
 	keyboard.w().onPressDo( {
 		game.removeTickEvent("movimiento2")
 		game.onTick(velocidad, "movimiento2",{
-			jugador2.arriba()
+			jugador2.mover("Arriba")
 	} )})
 	keyboard.s().onPressDo( {
 		game.removeTickEvent("movimiento2")
 		game.onTick(velocidad, "movimiento2",{
-			jugador2.abajo()
+			jugador2.mover("Abajo")
 	} )})
 	keyboard.d().onPressDo( {
 		game.removeTickEvent("movimiento2")
 		game.onTick(velocidad, "movimiento2",{
-			jugador2.derecha()
+			jugador2.mover("Derecha")
 	} )})
 	keyboard.a().onPressDo( {
 		game.removeTickEvent("movimiento2")
 		game.onTick(velocidad, "movimiento2",{
-			jugador2.izquierda()
+			jugador2.mover("Izquierda")
 	} )})
 	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.at(70 ,30)); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida()  })
 }
