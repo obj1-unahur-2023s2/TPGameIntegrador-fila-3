@@ -12,7 +12,6 @@ object fondoMenu {
 	//const property imgMoto= "img/moto1.png"
 	//const property imgContinuar = "img/presioneF.png"
 	const property position = game.at(0,0)
-	
 }
 
 object tron {

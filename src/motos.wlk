@@ -39,7 +39,7 @@ class Jugador {
 		    self.cambiarPosicion()
 		}
 		else if(direccion == "Derecha") {
-			self.position(self.position().rigth(1))
+			self.position(self.position().right(1))
 		    self.cambiarPosicion()
 		}
 		else {
