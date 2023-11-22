@@ -6,7 +6,7 @@ import musica.*
 
 
 object fondoMenu {
-	const property image = "img/fondo75.png"
+	const property image = "img/fondo75.jpg"
 	//const property imgControles1= "img/flechas.png"
 	//const property imgControles2= "img/flecha2.png"
 	//const property imgMoto= "img/moto1.png"
