@@ -5,10 +5,11 @@ import muros.*
 import tron.*
 
 program Exe{
-	game.height(60)
+	game.height(52)
 	game.width(80)
 	game.title("Tron: Batalla de Motos de Luz")
 	game.boardGround("trongridp3.png")
+	game.cellSize(18)
 	tron.inicio()
 	game.start()
 }
