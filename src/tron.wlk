@@ -6,22 +6,22 @@ import musica.*
 
 
 object fondoMenu {
-	const property image = "img/fondo75.jpg"
+	const property image = "img/fondo1440.jpg"
 	//const property imgControles1= "img/flechas.png"
 	//const property imgControles2= "img/flecha2.png"
 	//const property imgMoto= "img/moto1.png"
 	//const property imgContinuar = "img/presioneF.png"
-	const property position = game.at(10,0)
+	const property position = game.at(0,0)
 }
 
 object tron {
 	
 	const jugador1 = new Jugador(position = game.at(10 ,40), color = "Roja", ultimaDireccion = "Derecha")
 	const jugador2 = new Jugador(position = game.at(10 ,20), color = "Azul", ultimaDireccion = "Derecha")
-	const vidasRojo = new Vidas(jugadorLigado = jugador1, position = game.at(0, game.height() - 1), colorVida = "Rojo")
-	const vidasAzul = new Vidas(jugadorLigado = jugador2, position = game.at(30,game.height() - 1), colorVida = "Azul")
+	const vidasRojo = new Vidas(jugadorLigado = jugador1, position = game.at(0, game.height() - 4), colorVida = "Rojo")
+	const vidasAzul = new Vidas(jugadorLigado = jugador2, position = game.at(66,game.height() - 4), colorVida = "Azul")
 	
-	const velocidad = 50	
+	const velocidad = 30	
 	
 	method inicio(){
 		game.addVisual(fondoMenu)
