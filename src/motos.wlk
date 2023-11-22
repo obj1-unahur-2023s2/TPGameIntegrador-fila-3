@@ -3,7 +3,7 @@ import wollok.game.*
 class Jugador {
 	var property ultimaDireccion
 	var property position
-	const color
+	const property color
 	var property vidas = 5
 	var property image = "Moto" + color + ultimaDireccion + ".png"
 	
@@ -36,8 +36,8 @@ class Jugador {
 	var property ultPosDeLaEstela = estela.last().position()
 	var property ultPosMoto = position
 	
-	method perderVidas(){0.max(vidas -= 1)}
-	method tieneVidas(){return vidas != 0}
+	
+	method tieneVidas() {return vidas != 0}
 	
 	method agregarEstela(unaEstela) {
 		estela.add(unaEstela)
@@ -97,6 +97,7 @@ class Corazon {
 }
 
 class Vidas {
+	const jugadorLigado
 	const colorVida
 	var property position
 	const vida1 = new Corazon(color = colorVida, position = game.at(position.x(), position.y() - 1))
@@ -107,13 +108,13 @@ class Vidas {
 	
 	const property vidas = [vida1, vida2, vida3, vida4, vida5]
 	
-	method perderVida(jugadorNro) {
+	method perderVida() {
 		if(vidas.size() > 1) {
 			vidas.remove(vidas.last())
-			jugadorNro.perderVidas()
+			//jugadorLigado.vidas(0.max(jugadorLigado.vidas() - 1))   la variable vidas del jugador no la usa...
 		}else{
 			game.clear()
-			gameOver.esGanador(jugadorNro)
+			gameOver.esGanador(jugadorLigado)
 		}
 	}
 }
@@ -123,9 +124,15 @@ object gameOver{
 	var image
 	
 	method esGanador(jugadorNro){
-		image = "gameOver" + jugadorNro + ".png"
+		
+		if(jugadorNro.color() == "Rojo") {
+		  image = "image/gameOverjugador1.png"
+		}
+		else {
+			image = "image/gameOverJugador2.png"
+		}
 		if (jugadorNro.tieneVidas()){
-		 game.addVisual("img/image")			
+		 game.addVisual(image)	
 		}
 	}
 }

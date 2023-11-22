@@ -17,9 +17,9 @@ object fondoMenu {
 object tron {
 	
 	const jugador1 = new Jugador(position = game.at(10 ,40), color = "Roja", ultimaDireccion = "Derecha")
-	const jugador2 = new Jugador(position = game.at(70 ,30), color = "Azul", ultimaDireccion = "Izquierda")
-	const vidasRojo = new Vidas(position = game.at(0, game.height() - 1), colorVida = "Rojo")
-	const vidasAzul = new Vidas(position = game.at(30,game.height() - 1), colorVida = "Azul")
+	const jugador2 = new Jugador(position = game.at(10 ,20), color = "Azul", ultimaDireccion = "Derecha")
+	const vidasRojo = new Vidas(jugadorLigado = jugador1, position = game.at(0, game.height() - 1), colorVida = "Rojo")
+	const vidasAzul = new Vidas(jugadorLigado = jugador2, position = game.at(30,game.height() - 1), colorVida = "Azul")
 	
 	const velocidad = 50	
 	
@@ -72,14 +72,16 @@ object tron {
 		game.onTick(velocidad, "movimiento1",{
 			jugador1.mover("Izquierda")
 	} )})
-	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.at(10 ,30)); jugador1.ultimaDireccion("Derecha"); game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida("jugador1"); jugador2.position(game.at(70 ,30))})
+	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.at(10 ,30)); jugador1.ultimaDireccion("Derecha"); 
+		jugador2.position(game.at(70 ,30)) ; game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida()
+	})
 }
 
 
 
 	method funcionesMotos2(){
 	// agregar evento de movimiento automatico al jugador 2
-	game.onTick(velocidad, "movimiento2", {jugador2.mover("Izquierda")})
+	game.onTick(velocidad, "movimiento2", {jugador2.mover("Derecha")})
 	
 	// agregar la motoAzul al tablero junto con su estela
 	game.addVisual(jugador2)
@@ -113,10 +115,11 @@ object tron {
 		game.onTick(velocidad, "movimiento2",{
 			jugador2.mover("Izquierda")
 	} )})
-	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.at(70 ,30)); jugador2.ultimaDireccion("Izquierda");game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida("jugador2"); jugador1.position(game.at(10 ,30))})
+	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.at(70 ,30)); jugador2.ultimaDireccion("Izquierda"); 
+		jugador1.position(game.at(10 ,30)); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida()
+	})
 	}
 } 
-
 
 
 
