@@ -6,12 +6,12 @@ import musica.*
 
 
 object fondoMenu {
-	const property image = "img/fondo1.jpg"
+	const property image = "img/fondo75.png"
 	//const property imgControles1= "img/flechas.png"
 	//const property imgControles2= "img/flecha2.png"
 	//const property imgMoto= "img/moto1.png"
 	//const property imgContinuar = "img/presioneF.png"
-	const property position = game.at(0,0)
+	const property position = game.at(10,0)
 }
 
 object tron {
