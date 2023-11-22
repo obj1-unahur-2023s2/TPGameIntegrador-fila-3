@@ -101,10 +101,10 @@ class Vidas {
 	const colorVida
 	var property position
 	const vida1 = new Corazon(color = colorVida, position = game.at(position.x(), position.y() - 1))
-	const vida2 = new Corazon(color = colorVida, position = game.at(position.x() + 1, position.y() - 1))
-	const vida3 = new Corazon(color = colorVida, position = game.at(position.x() +2, position.y() - 1))
-	const vida4 = new Corazon(color = colorVida, position = game.at(position.x() + 3, position.y() - 1))
-	const vida5 = new Corazon(color = colorVida, position = game.at(position.x() +4, position.y() - 1))
+	const vida2 = new Corazon(color = colorVida, position = game.at(position.x() + 2, position.y() - 1))
+	const vida3 = new Corazon(color = colorVida, position = game.at(position.x() +4, position.y() - 1))
+	const vida4 = new Corazon(color = colorVida, position = game.at(position.x() + 6, position.y() - 1))
+	const vida5 = new Corazon(color = colorVida, position = game.at(position.x() +8, position.y() - 1))
 	
 	const property vidas = [vida1, vida2, vida3, vida4, vida5]
 	
