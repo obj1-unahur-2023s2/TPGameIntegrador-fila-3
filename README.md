@@ -18,11 +18,10 @@ Equipo de desarrollo
 ## Reglas de Juego / Instrucciones
  
 - 1 vs 1
-- Sumar 3 puntos
-- 2 modalidades (Normal , Dificil)
+- Maximo 5 vidas cada uno
   
 Objetivo:
-El objetivo principal en el modo "Motos de Luz" es sobrevivir y derrotar a tus oponentes al forzarlos a chocar contra las líneas brillantes que dejas detrás de tu motocicleta de luz o contra las paredes del escenario. Ganarás puntos al eliminar a tus oponentes y al sobrevivir en el juego.
+El objetivo principal en el modo "Motos de Luz" es sobrevivir y derrotar a tus oponentes al forzarlos a chocar contra las líneas brillantes que dejas detrás de tu motocicleta de luz o contra las paredes del escenario.
 
 Jugabilidad:
 
@@ -32,11 +31,10 @@ Jugabilidad:
 
 3.    Evitar Chocar con Paredes y Líneas: Debes evitar chocar con las paredes del escenario o con las líneas creadas por tu propia moto o las de tus oponentes. Si tocas una línea o una pared, perderás y serás eliminado del juego.
 
-4.    Forzar a tus Oponentes a Chocar: La estrategia principal es cortar el camino de tus oponentes, haciendo que choquen contra las líneas que has dejado detrás o que se vean acorralados y choquen contra las paredes. Cada vez que uno de tus oponentes choca, ganas puntos.
+4.    Forzar a tus Oponentes a Chocar: La estrategia principal es cortar el camino de tus oponentes, haciendo que choquen contra las líneas que has dejado detrás o que se vean acorralados y choquen contra las paredes. 
 
-5.    Puntuación: El juego lleva un registro de la puntuación y muestra cuántos puntos ha ganado cada jugador. El objetivo es llegar a la mayor cantidad de puntos posible(3) y eliminar a tu oponente.
+5.    Cantida de vidas: Cada jugador empieza con un maximo de 5 vidas, que pierden cada vez que chocan contra una estela de la moto enemiga o propia, o si choca contra la pared. Cuando pierde las 5 vidas algun jugador, el juego finaliza y gana el que se quedo con al menos una vida.
 
-6.    Velocidad y Dificultad: La velocidad de las motos de luz y la dificultad del juego pueden aumentar a medida que avanza el juego, lo que hace que sea más desafiante evitar colisiones y eliminar a los oponentes.
 
 ## Comandos
     JUGADOR 1: Flechas del teclado ← ↑ → ↓ 
@@ -48,4 +46,4 @@ El modo "Motos de Luz" es una parte icónica de la película "Tron" y ha sido ad
 
 - Curso: Turno mañana, Progamación Orientada a Objetos I 2C,2023 / Facultad: Universidad Nacional de Hurlingham.
 - Versión de wollok:
-- Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos mantenerlo privado.
+- Una vez terminado, no tenemos problemas en que el repositorio sea público.
