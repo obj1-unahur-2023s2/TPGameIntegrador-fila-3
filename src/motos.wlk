@@ -25,14 +25,10 @@ class Jugador {
 	const estel13 = new Estela(colorEstela = color,position = game.at(estel12.position().x() -1, estel12.position().y()))
 	const estel14 = new Estela(colorEstela = color,position = game.at(estel13.position().x() -1, estel13.position().y()))
 	const estel15 = new Estela(colorEstela = color,position = game.at(estel14.position().x() -1, estel14.position().y()))
-	//const estel16 = new Estela(colorEstela = color,position = game.at(estel15.position().x() -1, estel15.position().y()))
-	//const estel17 = new Estela(colorEstela = color,position = game.at(estel16.position().x() -1, estel16.position().y()))
-	//const estel18 = new Estela(colorEstela = color,position = game.at(estel17.position().x() -1, estel17.position().y()))
-	//const estel19 = new Estela(colorEstela = color,position = game.at(estel18.position().x() -1, estel18.position().y()))
-	//const estel20 = new Estela(colorEstela = color,position = game.at(estel19.position().x() -1, estel19.position().y()))
+	
 	
 	const property estela = [estel1, estel2, estel3, estel4 , estel5 , estel6 ,estel7 , estel8, estel9 , estel10
-		,estel11 , estel12 , estel13 ,estel14 , estel15 /* ,estel16 ,estel17 ,estel18 ,estel19 ,estel20*/]
+		,estel11 , estel12 , estel13 ,estel14 , estel15]
 	
 	var property ultPosDeLaEstela = estela.last().position()
 	var property ultPosMoto = position
@@ -56,11 +52,9 @@ class Jugador {
 		ultPosDeLaEstela = estela.last().position()
 		ultPosMoto = position
 		if(direccion == "Arriba") {
-			if(position.y() < game.height() - 3 ){
+			if(position.y() < game.height() - 3){
 			self.position(self.position().up(1))
 		    self.cambiarPosicionEstela()
-			}else if(position.y() < game.height() - 2 ){
-				
 			}
 		}
 		else if(direccion == "Abajo") {
@@ -75,9 +69,11 @@ class Jugador {
 		    self.cambiarPosicionEstela()
 			}
 		}
-		else if(position.x() > 1 )  {
+		else {
+			if(position.x() > 1 )  {
 			self.position(self.position().left(1))
 		    self.cambiarPosicionEstela()
+			}
 		}
 	}
 }
@@ -121,11 +117,11 @@ class Vidas {
 	}
 }
 
-
 object gameOver{
-	var property image = "img/gameOverjugador1.png"
+	var property image = "img/gameOver.jpg"
 	const property position = game.origin()	
 	method terminarJuego(){
 		tron.finDeJuego()
 	}
 }
+

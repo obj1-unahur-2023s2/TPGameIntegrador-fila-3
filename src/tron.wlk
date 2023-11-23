@@ -3,18 +3,18 @@ import motos.*
 import musica.*
 
 object fondoMenu {
-	const property image = "img/fondo75.jpg"
-	const property position = game.at(10,0)
+	const property image = "img/inicioMenu.jpg"
+	const property position = game.at(0,0)
 }
 
 object tron {
 	
-	const jugador1 = new Jugador(position = game.at(10 ,40), color = "Roja", ultimaDireccion = "Derecha")
-	const jugador2 = new Jugador(position = game.at(70 ,40), color = "Azul", ultimaDireccion = "Izquierda")
+	const jugador1 = new Jugador(position = game.at(40 ,5), color = "Roja", ultimaDireccion = "Derecha")
+	const jugador2 = new Jugador(position = game.at(40 ,55), color = "Azul", ultimaDireccion = "Derecha")
 	const property vidasRojo = new Vidas(jugadorLigado = jugador1, position = game.at(0, game.height() - 1), colorVida = "Rojo")
-	const property vidasAzul = new Vidas(jugadorLigado = jugador2, position = game.at(30,game.height() - 1), colorVida = "Azul")
+	const property vidasAzul = new Vidas(jugadorLigado = jugador2, position = game.at(73,game.height() - 1), colorVida = "Azul")
 	
-	const velocidad = 50	
+	const velocidad = 20	
 	
 	method inicio(){
 		game.addVisual(fondoMenu)
@@ -35,6 +35,7 @@ object tron {
 	
 	method finDeJuego(){
 		game.clear()
+		musicaEnPartida.sacarMusica(musicaEnPartida.musicaEnJuego())
 		game.addVisual(gameOver)
 		keyboard.r().onPressDo( {self.reiniciarJuego()} )
 		keyboard.e().onPressDo( {game.stop()} )
@@ -79,8 +80,8 @@ object tron {
 		game.onTick(velocidad, "movimiento1",{
 			jugador1.mover("Izquierda")
 	} )})
-	game.onCollideDo(jugador1, {obstaculo => jugador1.position(game.at(10 ,30)); jugador1.ultimaDireccion("Derecha"); 
-		jugador2.position(game.at(70 ,30)) ; game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida()
+	game.onCollideDo(jugador1, {obstaculo => jugador1.ultimaDireccion("Derecha"); jugador1.position(game.at(40 ,5));  
+		jugador2.position(game.at(40 ,55));  game.removeVisual(vidasRojo.vidas().last()); vidasRojo.perderVida()
 	})
 	
 }
@@ -96,12 +97,6 @@ object tron {
 	jugador2.estela().forEach({e => game.addVisual(e)})
 	vidasAzul.vidas().forEach({v => game.addVisual(v)})
 	
-	/* estela infinita
-	game.onTick(velocidad, "estelaInfinita", {
-		jugador2.agregarEstela(new EstelaAzul(position = jugador2.ultPosDeLaEstela()))
-		game.addVisual(jugador2.estela().last())
-	})
-	*/
 	// agregar los movimientos a sus respectivas direcciones
 	keyboard.up().onPressDo( {
 		game.removeTickEvent("movimiento2")
@@ -123,8 +118,8 @@ object tron {
 		game.onTick(velocidad, "movimiento2",{
 			jugador2.mover("Izquierda")
 	} )})
-	game.onCollideDo(jugador2, {obstaculo => jugador2.position(game.at(70 ,30)); jugador2.ultimaDireccion("Izquierda"); 
-		jugador1.position(game.at(10 ,30)); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida()
+	game.onCollideDo(jugador2, {obstaculo => jugador2.ultimaDireccion("Derecha"); jugador2.position(game.at(40 ,55));  
+		jugador1.position(game.at(40 ,5)); game.removeVisual(vidasAzul.vidas().last()); vidasAzul.perderVida()
 	})
 	}
 } 
