@@ -1,8 +1,13 @@
 import wollok.game.*
-import pepita.*
+import motos.*
+import tron.*
 
-program juego {
-	game.title("Juego Base")
-	game.addVisual(pepita)
+program Exe{
+	game.height(60)
+	game.width(80)
+	game.title("Tron: Batalla de Motos de Luz")
+	game.boardGround("trongridp3.png")
+	game.cellSize(12)
+	tron.inicio()
 	game.start()
 }
